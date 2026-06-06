@@ -4,7 +4,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.19.2",
-    "ejs": "^3.1.10"
+    "ejs": "^3.1.10",
+    "cookie-parser": "^1.4.7",
+    "better-sqlite3": "^11.0.0"
   },
   "scripts": {
     "start": "node app.js"
