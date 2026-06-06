@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>簡易チャットサービス</title>
+</head>
+<body>
+    <h1>簡易チャットアプリ</h1>
+
+    <form action="/send" method="POST">
+        <input type="text" name="name" placeholder="名前" required><br>
+        <textarea name="message" placeholder="メッセージを入力" required></textarea><br>
+        <button type="submit">送信</button>
+    </form>
+
+    <hr>
+
+    <h2>メッセージ一覧</h2>
+    <ul>
+        <% chats.forEach(function(chat) { %>
+            <li>
+                <strong><%= chat.name %></strong>: <%= chat.message %>
+                <form action="/delete/<%= chat.id %>" method="POST" style="display:inline;">
+                    <button type="submit">削除</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
